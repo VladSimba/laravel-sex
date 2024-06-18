@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -27,14 +25,14 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-//        return redirect(route(''));
+        return redirect(route('home'));
     }
 
     public function logoutProcess()
     {
         auth()->logout();
 
-//        return redirect(route(''));
+        return redirect(route('home'));
     }
 
     public function showLoginForm()
@@ -47,7 +45,7 @@ class AuthController extends Controller
         $isUserExists = auth()->attempt($request->validated(), true);
 
         if ($isUserExists) {
-            return redirect(round('home'));
+            return redirect(route('home'));
         }
         return redirect(route('show-login-form'))->withErrors(['не существует email или пароль']);
     }

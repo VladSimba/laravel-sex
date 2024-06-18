@@ -1,4 +1,5 @@
-<form method="post" action="{{ route('login-form-process') }}">
+<x-header></x-header>
+<form method="post" action="{{ route('login-form-processor') }}">
     @csrf
 
     <input name="email" type="email" placeholder="email">
@@ -12,4 +13,3 @@
 
     <button type="submit">Cохранить</button>
 </form>
-

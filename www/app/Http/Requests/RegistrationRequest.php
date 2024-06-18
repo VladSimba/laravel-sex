@@ -29,7 +29,8 @@ class RegistrationRequest extends FormRequest
             ],
             'email' => [
                 'required',
-                'email'
+                'email',
+                'unique:users,email'
             ],
             'password' => [
                 'required',

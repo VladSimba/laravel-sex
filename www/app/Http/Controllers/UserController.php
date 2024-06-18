@@ -24,7 +24,7 @@ class UserController extends Controller
         if ($request->new_password){
             $newData['password'] = Hash::make($request->new_password);
         }
-        $user ->update($newData);
+        $user->update($newData);
 
         return redirect(route('account'));
     }

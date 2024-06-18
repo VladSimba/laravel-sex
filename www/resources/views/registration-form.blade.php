@@ -1,4 +1,5 @@
-<form method="post" action="{{route('registration-form-processor')}}">
+<x-header></x-header>
+<form method="post" action="{{ route('registration-form-processor') }}">
     @csrf
     <input name="name" type="text" placeholder="Логин">
     <br>
