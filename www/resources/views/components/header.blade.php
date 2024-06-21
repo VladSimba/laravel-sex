@@ -1,3 +1,8 @@
+<style>
+    .button svg{
+        height: 15px;
+    }
+</style>
 <div>
     <div>Sex</div>
     <div>
