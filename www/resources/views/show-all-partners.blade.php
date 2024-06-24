@@ -5,6 +5,6 @@
 @foreach($partners as $partner)
 
     <p>
-        {{ $partner->name }}<a href="{{route('add-partner', ['partner' => $partner->id])}}">добавить></a>
+        {{ $partner->name }}<a href="{{ route('add-partner', ['partner' => $partner->id]) }}">добавить></a>
     </p>
 @endforeach
