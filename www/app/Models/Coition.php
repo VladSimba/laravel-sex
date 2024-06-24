@@ -13,9 +13,11 @@ class Coition extends Model
         'comment',
         'date_time',
     ];
+
     protected $casts = [
         'type' => CoitionsTypeEnum::class,
     ];
+
     public function positions(): BelongsToMany
     {
         return $this->belongsToMany(Position::class, 'coition_position');

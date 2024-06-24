@@ -27,6 +27,7 @@ class PositionSeeder extends Seeder
                 'name' => 'Миссионерская',
             ],
         ];
+
         Position::query()->insert($positions);
     }
 }
