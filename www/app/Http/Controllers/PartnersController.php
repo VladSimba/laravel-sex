@@ -19,6 +19,7 @@ class PartnersController extends Controller
         $partners = Partner::query()->whereHas('user')->get();
         return view('show-all-partners', ['partners' => $partners]);
     }
+
     public function addPartner(Partner $partner)
     {
         auth()->user()->partners()->attach($partner->id);
