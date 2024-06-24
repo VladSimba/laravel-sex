@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('coitions', function (Blueprint $table) {
+        Schema::create('positions', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->text('comment')->nullable();
-            $table->timestamp('date_time');
-            $table->timestamps();
+            $table->string('name');
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('coitions');
+        Schema::dropIfExists('positions');
     }
 };

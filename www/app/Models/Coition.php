@@ -2,10 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Enums\CoitionsTypeEnum;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Coition extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'type',
+        'comment',
+        'date_time',
+    ];
+    protected $casts = [
+        'type' => CoitionsTypeEnum::class,
+    ];
+    public function positions(): BelongsToMany
+    {
+        return $this->belongsToMany(Position::class, 'coition_position');
+    }
 }
