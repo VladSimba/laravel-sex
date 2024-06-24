@@ -25,4 +25,9 @@ class Partner extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function coitions(): BelongsToMany
+    {
+        return $this->belongsToMany(Coition::class, 'coition_partner');
+    }
 }
